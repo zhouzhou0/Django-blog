@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block name %}博客列表{% endblock name %}
+{% block swiper %}{% endblock swiper %}
+{% block right %}{% endblock right %}
+
+{% block arclist %}
+    {% if blogs_page %}
+<div class="arclist">
+
+        <h4 class="index-title homeh4"><a href=""><i class="el-certificate"></i>最新文章
+            <small>New Article</small>
+        </a></h4>
+        <!--列表开始-->
+        <ul>
+
+            {% for blog in blogs_page %}
+                <div class="post-line bg-color">
+                <ul>
+                    <li><a title="{{ blog.author }}发表于{{ blog.create_time }}"><i class="el-time"></i>
+                        <time>{{ blog.create_time }}</time>
+                    </a></li><!--列表开始-->
+                           <li><a title="已有 {{ blog.read_nums }} 次浏览"><i class="el-eye-open"></i>{{ blog.read_nums }}</a></li>
+                            <li><a href="#"><i class="el-user"></i>{{ blog.author }}</a></li>
+                </ul>
+            </div>
+            <li id="New" style="!important; height: 300px;overflow: hidden;
+
+text-overflow: ellipsis;">
+
+                <div class="arc-right">
+                    <h4 class="blue-text"><a href="{% url 'blogs:detail' blog.id %}" title="{{ blog.title }}">{{ blog.title }}</a></h4>
+                    <p >{{ blog.content|safe }}</p>
+                    <ul>
+                        <li><a title="{{ blog.author }}&ensp;{{ blog.create_time }} 发表 ">
+                            <i class="el-time"></i> {{ blog.update_time }}</a></li>
+                        <li><a href="#" title="作者： {{ blog.author }}"><i
+                                class="el-user"></i>{{ blog.author }}</a></li>
+                        <li><a href="#" title="已有 {{ blog.conment_nums }} 条评论"><i
+                                class="el-comment"> {{ blog.conment_nums }}</i></a>
+                        </li>
+                        <li><a title="已有 {{ article.read_nums }} 次浏览"><i class="el-eye-open"></i>{{ article.read_nums }}
+                        </a></li>
+                        <li><a href="#" title="查看分类"><i class="el-th-list"></i>{{ article.category.name }}</a></li>
+                    </ul>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+
+            <div class="pagination">
+            <div class="list-page">
+                <ul class="post-data">
+                    <li><a>第 {{ current_page }} - {{ last_page }} 页</a> <a>共 {{ num_pages }} 页</a></li>
+                </ul>
+            </div>
+            <ul>
+       {% if blogs_page.has_previous %}
+				<a class="active" href="{% url 'blogs:pblogs' blogs_page.previous_page_number %}"><上一页</a>
+                {% endif %}
+                {% for pindex in blogs_page.paginator.page_range %}
+                    {% if pindex == blogs_page.number %}
+				        <a class="active" href="{% url 'blogs:pblogs' pindex %}" class="active">{{ pindex }}</a>
+                    {% else %}
+				        <a class="active" href="{% url 'blogs:pblogs' pindex %}">{{ pindex }}</a>
+                    {% endif %}
+				{% endfor %}
+                {% if blogs_page.has_next %}
+				<a class="active" href="{% url 'blogs:pblogs' blogs_page.next_page_number %}">下一页></a>
+                {% endif %}
+
+
+            </ul>
+        </div>
+
+    {% else %}
+    <section class="mysection" style="animation: fuxiasuo 0.8s;">暂时没有任何文章。</section>
+    {% endif %}
+{% endblock arclist %}
+
+
+
+
+
+
+

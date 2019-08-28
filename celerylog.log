@@ -1,0 +1,10 @@
+[2019-06-05 09:21:03,706: INFO/MainProcess] Connected to redis://192.168.136.158:6379/8
+[2019-06-05 09:21:03,722: INFO/MainProcess] mingle: searching for neighbors
+[2019-06-05 09:21:04,774: INFO/MainProcess] mingle: all alone
+[2019-06-05 09:21:04,802: WARNING/MainProcess] /home/zhou/.virtualenvs/django2.2/lib/python3.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-06-05 09:21:04,804: INFO/MainProcess] w1@ubuntu ready.
+[2019-06-05 09:21:17,652: INFO/MainProcess] Received task: celery_tasks.tasks.send_register_active_email[02693f9d-ffe3-4d3f-8a18-239ba20ce1c2]  
+[2019-06-05 09:21:19,051: INFO/ForkPoolWorker-3] Task celery_tasks.tasks.send_register_active_email[02693f9d-ffe3-4d3f-8a18-239ba20ce1c2] succeeded in 1.3954166739999891s: None
+[2019-06-05 10:02:08,594: INFO/MainProcess] Received task: celery_tasks.tasks.generate_static_index_html[0e10912f-2099-49a8-ab02-990a6037e077]  
+[2019-06-05 10:02:09,703: INFO/ForkPoolWorker-4] Task celery_tasks.tasks.generate_static_index_html[0e10912f-2099-49a8-ab02-990a6037e077] succeeded in 1.0957528849999107s: None

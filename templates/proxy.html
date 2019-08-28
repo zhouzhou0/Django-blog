@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block name %}博客列表{% endblock name %}
+{% block swiper %}{% endblock swiper %}
+{% block right %}{% endblock right %}
+{% block arclist %}
+<div class="arclist">
+        <ul>
+            {% for proxy in proxis_page %}
+            <li>ip:{{ proxy.ip_address }}---端口:{{ proxy.port }}---地址:{{ proxy.address }}---是否匿名:{{ proxy.anonymous }}---类型:{{ proxy.type }}---存活时间:{{ proxy.alivetiem }}</li>
+            {% endfor %}
+        </ul>
+
+</div>
+            </ul>
+
+            <div class="pagination">
+            <div class="list-page">
+                <ul class="post-data">
+                    <li><a>第 {{ current_page }} - {{ last_page }} 页</a> <a>共 {{ num_pages }} 页</a></li>
+                </ul>
+            </div>
+            <ul>
+       {% if proxis_page.has_previous %}
+				<a class="active" href="{% url 'blogs:proxy' proxis_page.previous_page_number %}"><上一页</a>
+                {% endif %}
+                {% for pindex in proxis_page.paginator.page_range %}
+                    {% if pindex == skus_page.number %}
+				        <a class="active" href="{% url 'blogs:proxy' pindex %}" class="active">{{ pindex }}</a>
+                    {% else %}
+				        <a class="active" href="{% url 'blogs:proxy' pindex %}">{{ pindex }}</a>
+                    {% endif %}
+				{% endfor %}
+                {% if proxis_page.has_next %}
+				<a class="active" href="{% url 'blogs:proxy' proxis_page.next_page_number %}">下一页></a>
+                {% endif %}
+
+
+
+{% endblock arclist %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block logo %}{% endblock logo %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+{% endblock css %}
+{% block arclist %}
+<div class="arclist"></div>
+{% endblock arclist %}
+{% block swiper %}
+<div class="wrap" id="wrap">
+	<div class="logGet">
+			<!-- 头部提示信息 -->
+			<div class="logD logDtip">
+				<p class="p1">登录</p>
+			</div>
+			<!-- 输入框 -->
+        <form method="post">
+            {% csrf_token %}
+			<div class="lgD">
+
+				<input type="text"
+					placeholder="输入用户名"  name="username"/>
+			</div>
+			<div class="lgD">
+
+				<input type="password"
+					placeholder="输入用户密码" name="pwd" />
+			</div>
+			<div class="logC">
+                <input type="submit" name="" value="登录 " >
+			</div>
+            </form>
+        <h3>{{ errmsg }}</h3>
+        <h3>{{ msg }}</h3>
+		</div>
+</div>
+{% endblock swiper %}
+
+

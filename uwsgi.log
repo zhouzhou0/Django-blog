@@ -1,0 +1,67 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Jun  2 23:40:17 2019] ***
+compiled with version: 4.7.4 on 02 June 2019 15:22:29
+os: Linux-4.15.0-50-generic #54~16.04.1-Ubuntu SMP Wed May 8 15:55:19 UTC 2019
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/zhou/extend/py_django/blog_zhou
+writing pidfile to uwsgi.pid
+detected binary path: /home/zhou/.virtualenvs/django2.2/bin/uwsgi
+chdir() to /home/zhou/extend/py_django/blog_zhou
+your processes number limit is 15445
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:8080 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:42433 (port auto-assigned) fd 3
+Python version: 3.7.3 (default, Mar 27 2019, 22:11:17)  [GCC 7.3.0]
+Set PythonHome to /home/zhou/.virtualenvs/django2.2
+Python main interpreter initialized at 0x1b33590
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 4 seconds on interpreter 0x1b33590 pid: 18603 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 18603)
+spawned uWSGI worker 1 (pid: 18604, cores: 2)
+spawned uWSGI worker 2 (pid: 18606, cores: 2)
+spawned uWSGI worker 3 (pid: 18607, cores: 2)
+spawned uWSGI worker 4 (pid: 18609, cores: 2)
+spawned uWSGI http 1 (pid: 18611)
+[pid: 18609|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 819 bytes} [Sun Jun  2 23:40:45 2019] GET / => generated 79732 bytes in 4321 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 18609|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 765 bytes} [Sun Jun  2 23:40:50 2019] GET /static/js/jquery.2.1.4.min.js => generated 77 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 18609|app: 0|req: 3/3] 127.0.0.1 () {38 vars in 738 bytes} [Sun Jun  2 23:40:50 2019] GET /static/js/my.js => generated 77 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 18609|app: 0|req: 5/4] 127.0.0.1 () {38 vars in 771 bytes} [Sun Jun  2 23:40:50 2019] GET /static/css/animation.css => generated 77 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 18609|app: 0|req: 5/5] 127.0.0.1 () {38 vars in 765 bytes} [Sun Jun  2 23:40:50 2019] GET /static/css/public.css => generated 77 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 18609|app: 0|req: 6/6] 127.0.0.1 () {38 vars in 771 bytes} [Sun Jun  2 23:40:50 2019] GET /static/css/font-icon.css => generated 77 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 18609|app: 0|req: 7/7] 127.0.0.1 () {38 vars in 762 bytes} [Sun Jun  2 23:40:50 2019] GET /static/js/superbg-custom.js => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 18609|app: 0|req: 8/8] 127.0.0.1 () {38 vars in 748 bytes} [Sun Jun  2 23:40:50 2019] GET /static/js/tooltip.js => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 18609|app: 0|req: 9/9] 127.0.0.1 () {38 vars in 756 bytes} [Sun Jun  2 23:40:50 2019] GET /static/js/layer/layer.js => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 18609|app: 0|req: 10/10] 127.0.0.1 () {38 vars in 752 bytes} [Sun Jun  2 23:40:50 2019] GET /static/js/checkform.js => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 18609|app: 0|req: 11/11] 127.0.0.1 () {38 vars in 742 bytes} [Sun Jun  2 23:40:50 2019] GET /static/js/skin.js => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 18609|app: 0|req: 12/12] 127.0.0.1 () {38 vars in 788 bytes} [Sun Jun  2 23:40:50 2019] GET /static/images/logo.gif => generated 77 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 18604|app: 0|req: 1/13] 127.0.0.1 () {38 vars in 756 bytes} [Sun Jun  2 23:40:50 2019] GET /static/js/superbg.min.js => generated 77 bytes in 568 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 18607|app: 0|req: 2/14] 127.0.0.1 () {38 vars in 765 bytes} [Sun Jun  2 23:40:50 2019] GET /static/css/skin_3.css => generated 77 bytes in 588 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 18607|app: 0|req: 2/15] 127.0.0.1 () {38 vars in 773 bytes} [Sun Jun  2 23:40:50 2019] GET /static/css/flexslider.css => generated 77 bytes in 584 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 18606|app: 0|req: 2/16] 127.0.0.1 () {38 vars in 765 bytes} [Sun Jun  2 23:40:50 2019] GET /static/css/skin_1.css => generated 77 bytes in 597 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 18606|app: 0|req: 2/17] 127.0.0.1 () {38 vars in 767 bytes} [Sun Jun  2 23:40:50 2019] GET /static/css/default.css => generated 77 bytes in 616 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 18609|app: 0|req: 13/18] 127.0.0.1 () {38 vars in 762 bytes} [Sun Jun  2 23:40:50 2019] GET /static/js/superbg-custom.js => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 18609|app: 0|req: 14/19] 127.0.0.1 () {38 vars in 762 bytes} [Sun Jun  2 23:40:50 2019] GET /static/js/superbg-custom.js => generated 77 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 18606|app: 0|req: 3/20] 127.0.0.1 () {38 vars in 762 bytes} [Sun Jun  2 23:40:50 2019] GET /static/js/superbg-custom.js => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 18604|app: 0|req: 2/21] 127.0.0.1 () {38 vars in 748 bytes} [Sun Jun  2 23:40:50 2019] GET /static/js/tooltip.js => generated 77 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 18609|app: 0|req: 15/22] 127.0.0.1 () {38 vars in 756 bytes} [Sun Jun  2 23:40:50 2019] GET /static/js/layer/layer.js => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 18609|app: 0|req: 16/23] 127.0.0.1 () {38 vars in 752 bytes} [Sun Jun  2 23:40:50 2019] GET /static/js/checkform.js => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 18609|app: 0|req: 17/24] 127.0.0.1 () {38 vars in 742 bytes} [Sun Jun  2 23:40:50 2019] GET /static/js/skin.js => generated 77 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 18609|app: 0|req: 18/25] 127.0.0.1 () {38 vars in 796 bytes} [Sun Jun  2 23:41:13 2019] GET /static/images/favicon_.ico => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 18611)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.

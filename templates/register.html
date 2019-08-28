@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block logo %}{% endblock logo %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+{% endblock css %}
+{% block swiper %}
+
+<div class="wrap" id="wrap">
+	<div class="logGet">
+			<!-- 头部提示信息 -->
+			<div class="logD logDtip">
+				<p class="p1">注册用户</p>
+			</div>
+			<!-- 输入框 -->
+        <form method="post">
+            {% csrf_token %}
+            <div class="lgD">
+
+				<input type="text"
+					placeholder="输入用户名" name="user_name"/>
+			</div>
+			<div class="lgD">
+
+				<input type="password"
+					placeholder="输入用户密码" name="pwd" />
+			</div>
+			<div class="lgD">
+
+				<input type="password"
+					placeholder="确认密码" name="cpwd" />
+			</div>
+			<div class="lgD">
+
+				<input type="text"
+					placeholder="输入邮箱" name="email"/>
+			</div>
+			<div class="logC">
+                <input type="submit" name="" value="注 册  " >
+			</div>
+		</form>
+        <h3>{{ errmsg }}</h3>
+    </div>
+
+</div>
+
+
+
+{% endblock swiper %}

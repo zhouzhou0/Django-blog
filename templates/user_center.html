@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block name %}个人中心发布博客{% endblock name %}
+{% block js %}
+    <script type="text/javascript" src='{% static '/js/tiny_mce_src.js' %}'></script>
+     <script type="text/javascript">
+        tinyMCE.init({
+            'mode':'textareas',
+            'theme':'advanced',
+            'width':670,
+            'height':800
+        });
+    </script>
+{% endblock js %}
+
+<!--主题框架开始-->
+
+    <!--左侧开始-->
+    
+    
+    {% block swiper %}
+{{ errmsg }}
+
+<div class="container">
+{#            <section class="mysection" style="animation: fuxiasuo 0.8s;">暂时没有任何文章。</section><br>#}
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="search-index">
+                {%autoescape off%}
+                <input name="title" type="text" placeholder="请输入标题" onfocus="this.placeholder=''"
+                               onblur="this.placeholder='请输入标题'"/>
+                {%endautoescape%}
+
+{#                <i class="el-search"><input value=" " type="submit"/></i>#}
+            </div>
+            {%autoescape off%}
+                <textarea name='gcontent'>这里开始写你的博客吧</textarea><br>
+             {%endautoescape%}
+            {% for category in categorys %}
+            <lable>{{ category.name }}</lable><input value="{{ category.name }}" type="radio" name="category">
+            {% endfor %}
+             <div class="search-index">
+
+            <input value="点击发表博客" type="submit" >
+            </div>
+
+</div>
+    </section>
+        </form> 
+    {% endblock swiper %}
+{% block right %}{% endblock right %}
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block name %}博客搜索列表{% endblock name %}
+{% block swiper %}{% endblock swiper %}
+{% block right %}{% endblock right %}
+
+{% block arclist %}
+    {% if page %}
+<div class="arclist">
+
+        <h4 class="index-title homeh4"><a href=""><i class="el-certificate"></i>最新文章
+            <small>New Article</small>
+        </a></h4>
+        <!--列表开始-->
+        <ul>
+
+            {% for item in page %}
+            <li id="New" style="!important; height: 300px;overflow: hidden;
+
+text-overflow: ellipsis;">
+
+                <div class="arc-right">
+                    <h4 class="blue-text"><a href="{% url 'blogs:detail' item.object.id %}" title="{{ item.object.title }}">{{ item.object.title }}</a></h4>
+                    <p >{{ item.object.content|safe }}</p>
+                    <ul>
+                        <li><a title="{{ item.object.author }}&ensp;{{ item.object.create_time }} 发表 ">
+                            <i class="el-time"></i> {{ item.object.update_time }}</a></li>
+                        <li><a href="#" title="作者： {{ item.object.author }}"><i
+                                class="el-user"></i>{{ item.object.author }}</a></li>
+                        <li><a href="#" title="已有 {{ item.object.conment_nums }} 条评论"><i
+                                class="el-comment"> {{ item.object.conment_nums }}</i></a>
+                        </li>
+                        <li><a title="已有 {{ article.read_nums }} 次浏览"><i class="el-eye-open"></i>{{ article.read_nums }}
+                        </a></li>
+                        <li><a href="#" title="查看分类"><i class="el-th-list"></i>{{ article.category.name }}</a></li>
+                    </ul>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+
+            <div class="pagination">
+            <div class="list-page">
+                <ul class="post-data">
+                    <li><a> {{ paginator.page }} - {{ paginator.validate_number }} </a> <a>共 {{ paginator.num_pages }} 页</a></li>
+                </ul>
+            </div>
+            <ul>
+       {% if page.has_previous %}
+				<a class="active" href="/search?q={{ query }}&page={{ page.previous_page_number }}"><上一页</a>
+                {% endif %}
+                {% for pindex in paginator.page_range %}
+                    {% if pindex == page.number %}
+				        <a class="active" href="/search?q={{ query }}&page={{ pindex }}" class="active">{{ pindex }}</a>
+                    {% else %}
+				        <a class="active" href="/search?q={{ query }}&page={{ pindex }}">{{ pindex }}</a>
+                    {% endif %}
+				{% endfor %}
+                {% if page.has_next %}
+				<a class="active" href="/search?q={{ query }}&page={{ page.next_page_number }}">下一页></a>
+                {% endif %}
+
+
+            </ul>
+        </div>
+
+    {% else %}
+    <section class="mysection" style="animation: fuxiasuo 0.8s;">暂时没有任何文章。</section>
+    {% endif %}
+{% endblock arclist %}
